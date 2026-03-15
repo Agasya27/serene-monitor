@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-base: 210 70% 3.5%;
+    --bg-surface: 216 40% 6.5%;
+    --accent-cyan: 191 100% 50%;
+    --accent-violet: 253 100% 71%;
+    --stress-low: 160 100% 45%;
+    --stress-medium: 43 100% 50%;
+    --stress-high: 351 100% 64%;
+    --text-primary: 228 100% 97%;
+    --text-muted: 228 50% 70%;
+
+    --background: var(--bg-base);
+    --foreground: var(--text-primary);
+    --card: var(--bg-surface);
+    --card-foreground: var(--text-primary);
+    --popover: var(--bg-surface);
+    --popover-foreground: var(--text-primary);
+    --primary: var(--accent-cyan);
+    --primary-foreground: 210 70% 3.5%;
+    --secondary: var(--accent-violet);
+    --secondary-foreground: 228 100% 97%;
+    --muted: 216 30% 12%;
+    --muted-foreground: var(--text-muted);
+    --accent: var(--accent-cyan);
+    --accent-foreground: 210 70% 3.5%;
+    --destructive: var(--stress-high);
+    --destructive-foreground: 228 100% 97%;
+    --border: 220 20% 15%;
+    --input: 220 20% 15%;
+    --ring: var(--accent-cyan);
+    --radius: 1.25rem;
+
+    --sidebar-background: var(--bg-surface);
+    --sidebar-foreground: var(--text-primary);
+    --sidebar-primary: var(--accent-cyan);
+    --sidebar-primary-foreground: 210 70% 3.5%;
+    --sidebar-accent: 216 30% 12%;
+    --sidebar-accent-foreground: var(--text-primary);
+    --sidebar-border: 220 20% 15%;
+    --sidebar-ring: var(--accent-cyan);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-mono {
+    font-family: 'DM Mono', monospace;
+  }
+  .font-outfit {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+/* Glass card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Navbar glass */
+.nav-glass {
+  background: rgba(3, 8, 15, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 210, 255, 0.3);
+  border-radius: 99px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 210, 255, 0.5);
+}
+
+/* Stress badge variants */
+.stress-badge-low {
+  background: rgba(0, 229, 160, 0.12);
+  border: 1px solid rgba(0, 229, 160, 0.3);
+  color: #00E5A0;
+}
+.stress-badge-medium {
+  background: rgba(255, 184, 0, 0.12);
+  border: 1px solid rgba(255, 184, 0, 0.3);
+  color: #FFB800;
+}
+.stress-badge-high {
+  background: rgba(255, 69, 96, 0.12);
+  border: 1px solid rgba(255, 69, 96, 0.3);
+  color: #FF4560;
+}
